@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 import Stated from '@/views/Stated';
+import Shape from '@/views/Shape';
 
 export const routes = [
   {
@@ -8,6 +9,14 @@ export const routes = [
     component: Stated,
     meta: {
       label: '起步'
+    }
+  },
+  {
+    path: '/shape',
+    name: 'shape',
+    component: Shape,
+    meta: {
+      label: '形状'
     }
   }
 ];

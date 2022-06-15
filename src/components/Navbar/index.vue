@@ -1,6 +1,7 @@
 <template>
   <el-menu
     class="el-menu-vertical-demo"
+    router
     :collapse="menuToggle"
     :default-active="currentPath"
   >
