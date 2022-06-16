@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 import Stated from '@/views/Stated';
 import Shape from '@/views/Shape';
+import ThreeDTiles from '@/views/ThreeDTiles';
 
 export const routes = [
   {
@@ -17,6 +18,14 @@ export const routes = [
     component: Shape,
     meta: {
       label: '形状'
+    }
+  },
+  {
+    path: '/ThreeDTiles',
+    name: 'threeDTiles',
+    component: ThreeDTiles,
+    meta: {
+      label: '3D Tiles'
     }
   }
 ];
