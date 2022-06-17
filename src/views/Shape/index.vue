@@ -156,20 +156,14 @@ export default {
     };
 
     const initBoxMap1 = () => {
-      // eslint-disable-next-line
       const viewer = new Cesium.Viewer('box-map1', config);
-      // eslint-disable-next-line
       const redBox = viewer.entities.add({
         name: 'Red box with black outline',
-        // eslint-disable-next-line
         position: Cesium.Cartesian3.fromDegrees(-107.0, 40.0, 300000.0),
         box: {
-          // eslint-disable-next-line
           dimensions: new Cesium.Cartesian3(400000.0, 300000.0, 500000.0), // 长宽高
-          // eslint-disable-next-line
           material: Cesium.Color.RED.withAlpha(0.5),
           outline: true,
-          // eslint-disable-next-line
           outlineColor: Cesium.Color.BLACK
         }
       });
@@ -207,27 +201,20 @@ export default {
           }
         }
       ];
-      // eslint-disable-next-line
       const viewer = new Cesium.Viewer('box-map2', config);
-      // eslint-disable-next-line
       const dataSourcePromise = Cesium.CzmlDataSource.load(czml);
       viewer.dataSources.add(dataSourcePromise);
       viewer.zoomTo(dataSourcePromise);
     };
 
     const initPointMap = () => {
-      // eslint-disable-next-line
       const viewer = new Cesium.Viewer('point-map', config);
-      // eslint-disable-next-line
       const redPoint = viewer.entities.add({
         name: 'Red box with black outline',
-        // eslint-disable-next-line
         position: Cesium.Cartesian3.fromDegrees(-107.0, 40.0, 0.0),
         point: {
           pixelSize: 10, //点的大小
-          // eslint-disable-next-line
           color: Cesium.Color.RED, //点的颜色
-          // eslint-disable-next-line
           outlineColor: Cesium.Color.YELLOW, //外圈颜色
           outlineWidth: 1 //外圈大小
         }

@@ -8,7 +8,6 @@ import { onMounted } from 'vue';
 export default {
   setup() {
     const initMap = () => {
-      // eslint-disable-next-line
       const viewer = new Cesium.Viewer('map', {
         geocoder: false, // 查找位置工具
         homeButton: false, // 视角返回初始位置
