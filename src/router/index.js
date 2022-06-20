@@ -5,7 +5,6 @@ import Shape from '@/views/Shape';
 import ThreeDTiles from '@/views/ThreeDTiles';
 
 export const routes = [
-  basicMap,
   {
     path: '/stated',
     name: 'stated',
@@ -15,6 +14,7 @@ export const routes = [
       icon: 'ForkSpoon'
     }
   },
+  basicMap,
   {
     path: '/shape',
     name: 'shape',
