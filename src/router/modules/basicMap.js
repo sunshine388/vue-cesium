@@ -2,6 +2,7 @@ import { h, resolveComponent } from 'vue';
 import gaodeMap from '@/views/BasicMap/GaodeMap';
 import MapBox from '@/views/BasicMap/MapBox';
 import tdtMap from '@/views/BasicMap/TdtMap';
+import arcgis from '@/views/BasicMap/Arcgis';
 
 export default {
   path: '/basicMap',
@@ -36,6 +37,14 @@ export default {
       component: tdtMap,
       meta: {
         label: '天地图'
+      }
+    },
+    {
+      path: 'arcgis',
+      name: 'arcgis',
+      component: arcgis,
+      meta: {
+        label: 'Arcgis'
       }
     }
   ]
