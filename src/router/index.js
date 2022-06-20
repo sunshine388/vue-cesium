@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 import basicMap from './modules/basicMap';
+import terrain from './modules/terrain';
 import Stated from '@/views/Stated';
 import Shape from '@/views/Shape';
 import ThreeDTiles from '@/views/ThreeDTiles';
@@ -15,6 +16,7 @@ export const routes = [
     }
   },
   basicMap,
+  terrain,
   {
     path: '/shape',
     name: 'shape',
