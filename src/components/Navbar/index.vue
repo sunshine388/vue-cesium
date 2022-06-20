@@ -5,10 +5,26 @@
     :collapse="menuToggle"
     :default-active="currentPath"
   >
-    <el-menu-item v-for="item in routes" :index="item.path" :key="item.path">
-      <el-icon><setting /></el-icon>
-      <template #title>{{ item.meta.label }}</template>
-    </el-menu-item>
+    <template v-for="item in routesList" :key="item.path">
+      <el-sub-menu v-if="item.children" :index="item.path">
+        <template #title>
+          <el-icon><component :is="item.meta.icon"></component></el-icon>
+          <span>{{ item.meta.label }}</span>
+        </template>
+        <el-menu-item
+          v-for="subItem in item.children"
+          :key="subItem.path"
+          :index="subItem.path"
+        >
+          <!-- <el-icon><component :is="subItem.meta.icon"></component></el-icon> -->
+          <template #title>{{ subItem.meta.label }}</template>
+        </el-menu-item>
+      </el-sub-menu>
+      <el-menu-item v-else :index="item.path">
+        <el-icon><component :is="item.meta.icon"></component></el-icon>
+        <template #title>{{ item.meta.label }}</template>
+      </el-menu-item>
+    </template>
   </el-menu>
 </template>
 
@@ -24,14 +40,36 @@ export default {
   emits: ['update:menuToggle'],
   setup(props, { emit }) {
     const { menuToggle } = toRefs(props);
+
     const route = useRoute();
     let currentPath = computed(() => {
       return route.path;
     });
+
+    const routesList = computed(() => {
+      return filtterRoutes(routes);
+    });
+
+    const filtterRoutes = (routes, path = '') => {
+      let result = [];
+      routes.forEach((item, index) => {
+        item.path = path + item.path;
+        if (item.children && item.children.length > 0) {
+          const children = filtterRoutes(item.children, item.path + '/');
+          const currentRoutes = { ...item };
+          currentRoutes.children = children;
+          result.push(currentRoutes);
+        } else {
+          result.push(item);
+        }
+      });
+      return result;
+    };
+
     function menuToggleAction() {
       emit('update:menuToggle', !menuToggle.value);
     }
-    return { routes, currentPath, menuToggleAction };
+    return { routesList, currentPath, menuToggleAction };
   }
 };
 </script>

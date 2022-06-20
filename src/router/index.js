@@ -1,15 +1,18 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
+import basicMap from './modules/basicMap';
 import Stated from '@/views/Stated';
 import Shape from '@/views/Shape';
 import ThreeDTiles from '@/views/ThreeDTiles';
 
 export const routes = [
+  basicMap,
   {
     path: '/stated',
     name: 'stated',
     component: Stated,
     meta: {
-      label: '起步'
+      label: '起步',
+      icon: 'ForkSpoon'
     }
   },
   {
@@ -17,7 +20,8 @@ export const routes = [
     name: 'shape',
     component: Shape,
     meta: {
-      label: '形状'
+      label: '形状',
+      icon: 'ForkSpoon'
     }
   },
   {
@@ -25,7 +29,8 @@ export const routes = [
     name: 'threeDTiles',
     component: ThreeDTiles,
     meta: {
-      label: '3D Tiles'
+      label: '3D Tiles',
+      icon: 'ForkSpoon'
     }
   }
 ];
