@@ -25,7 +25,7 @@ export default {
       const viewer = new Cesium.Viewer('map');
 
       const tileset = new Cesium.Cesium3DTileset({
-        url: '/Cesium/3DTiles/tileset.json'
+        url: '/static/3DTiles/tileset.json'
       });
 
       viewer.scene.primitives.add(tileset);
