@@ -3,6 +3,7 @@ import gaodeMap from '@/views/BasicMap/GaodeMap';
 import MapBox from '@/views/BasicMap/MapBox';
 import tdtMap from '@/views/BasicMap/TdtMap';
 import arcgis from '@/views/BasicMap/Arcgis';
+import superMap from '@/views/BasicMap/SuperMap';
 
 export default {
   path: '/basicMap',
@@ -45,6 +46,14 @@ export default {
       component: arcgis,
       meta: {
         label: 'Arcgis'
+      }
+    },
+    {
+      path: 'superMap',
+      name: 'superMap',
+      component: superMap,
+      meta: {
+        label: '超图'
       }
     }
   ]
