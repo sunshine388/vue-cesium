@@ -4,6 +4,7 @@ import MapBox from '@/views/BasicMap/MapBox';
 import tdtMap from '@/views/BasicMap/TdtMap';
 import arcgis from '@/views/BasicMap/Arcgis';
 import superMap from '@/views/BasicMap/SuperMap';
+import baseLayerParams from '@/views/BasicMap/BaseLayerParams';
 
 export default {
   path: '/basicMap',
@@ -54,6 +55,14 @@ export default {
       component: superMap,
       meta: {
         label: '超图'
+      }
+    },
+    {
+      path: 'baseLayerParams',
+      name: 'baseLayerParams',
+      component: baseLayerParams,
+      meta: {
+        label: '底图参数'
       }
     }
   ]
